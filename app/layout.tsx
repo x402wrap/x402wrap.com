@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   keywords: ["API", "monetization", "Solana", "x402", "micropayments", "USDC"],
   authors: [{ name: "x402wrap" }],
   icons: {
-    icon: '/favicon.svg',
+    icon: '/favicon.png',
   },
   openGraph: {
     title: "x402wrap - Monetize Any API Instantly",
