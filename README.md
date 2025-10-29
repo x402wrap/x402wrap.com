@@ -246,6 +246,5 @@ MIT License - see [LICENSE](LICENSE) file for details
 
 Questions? Reach out:
 - Twitter: [@x402wrap](https://twitter.com/x402wrap)
-- Discord: [Join our server](https://discord.gg/x402wrap)
 - Email: hello@x402wrap.com
 
