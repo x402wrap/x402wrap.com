@@ -80,7 +80,7 @@ export default function DocsPage() {
         <Card className="mb-8">
           <h2 className="text-3xl font-bold text-white mb-4">⚙️ How It Works</h2>
           <p className="text-gray-300 mb-4">
-            x402wrap acts as a payment gateway for your APIs. Here's what happens when someone calls your wrapped endpoint:
+            x402wrap acts as a payment gateway for your APIs. Here&apos;s what happens when someone calls your wrapped endpoint:
           </p>
           
           <div className="bg-gray-900/50 rounded-lg p-4 border border-white/10 mb-4 font-mono text-sm overflow-x-auto">
@@ -90,7 +90,7 @@ export default function DocsPage() {
             <div className="text-purple-400 ml-4">↓</div>
             <div className="text-gray-400 mb-2">3. If valid, forwards request to your API</div>
             <div className="text-purple-400 ml-4">↓</div>
-            <div className="text-gray-400">4. Returns your API's response to the client</div>
+            <div className="text-gray-400">4. Returns your API&apos;s response to the client</div>
           </div>
           
           <p className="text-gray-400">
@@ -155,12 +155,12 @@ export default function DocsPage() {
           
           <div className="bg-gray-900/50 rounded-lg p-4 border border-white/10 overflow-x-auto mb-4">
             <pre className="text-sm">
-<span className="text-purple-400">// Using fetch()</span>
-<span className="text-blue-400">const</span> response = <span className="text-blue-400">await</span> <span className="text-yellow-400">fetch</span>(<span className="text-green-400">'https://x402wrap.com/abc123xyz'</span>, {'{'}
-  <span className="text-cyan-400">method</span>: <span className="text-green-400">'GET'</span>,
+<span className="text-purple-400">{`// Using fetch()`}</span>
+<span className="text-blue-400">const</span> response = <span className="text-blue-400">await</span> <span className="text-yellow-400">fetch</span>(<span className="text-green-400">{`'https://x402wrap.com/abc123xyz'`}</span>, {'{'}
+  <span className="text-cyan-400">method</span>: <span className="text-green-400">{`'GET'`}</span>,
   <span className="text-cyan-400">headers</span>: {'{'}
-    <span className="text-green-400">'x-payment-signature'</span>: paymentSignature,
-    <span className="text-green-400">'x-payment-from'</span>: yourWalletAddress,
+    <span className="text-green-400">{`'x-payment-signature'`}</span>: paymentSignature,
+    <span className="text-green-400">{`'x-payment-from'`}</span>: yourWalletAddress,
   {'}'}
 {'}'});
             </pre>
@@ -170,7 +170,7 @@ export default function DocsPage() {
           <div className="space-y-3 mb-4">
             <div className="bg-white/5 rounded-lg p-4 border border-white/10">
               <div className="font-semibold text-white mb-2">Step 1: Create Solana Transaction</div>
-              <p className="text-gray-400 text-sm">Send USDC to the API provider's wallet address</p>
+              <p className="text-gray-400 text-sm">Send USDC to the API provider&apos;s wallet address</p>
             </div>
             
             <div className="bg-white/5 rounded-lg p-4 border border-white/10">
@@ -187,13 +187,13 @@ export default function DocsPage() {
           <h3 className="text-xl font-semibold text-white mb-3 mt-6">Error Responses</h3>
           <div className="bg-gray-900/50 rounded-lg p-4 border border-white/10 overflow-x-auto">
             <pre className="text-sm">
-<span className="text-gray-500">// 402 Payment Required</span>
+<span className="text-gray-500">{`// 402 Payment Required`}</span>
 {'{'}
-  <span className="text-cyan-400">"error"</span>: <span className="text-green-400">"Payment Required"</span>,
-  <span className="text-cyan-400">"payment"</span>: {'{'}
-    <span className="text-cyan-400">"recipient"</span>: <span className="text-green-400">"7xKXtaoaYJ...xyz"</span>,
-    <span className="text-cyan-400">"amount"</span>: <span className="text-yellow-400">0.01</span>,
-    <span className="text-cyan-400">"currency"</span>: <span className="text-green-400">"USDC"</span>
+  <span className="text-cyan-400">&quot;error&quot;</span>: <span className="text-green-400">&quot;Payment Required&quot;</span>,
+  <span className="text-cyan-400">&quot;payment&quot;</span>: {'{'}
+    <span className="text-cyan-400">&quot;recipient&quot;</span>: <span className="text-green-400">&quot;7xKXtaoaYJ...xyz&quot;</span>,
+    <span className="text-cyan-400">&quot;amount&quot;</span>: <span className="text-yellow-400">0.01</span>,
+    <span className="text-cyan-400">&quot;currency&quot;</span>: <span className="text-green-400">&quot;USDC&quot;</span>
   {'}'}
 {'}'}
             </pre>
@@ -222,12 +222,12 @@ export default function DocsPage() {
                 <tr className="border-b border-white/5">
                   <td className="py-3"><code className="text-purple-400">x-payment-from</code></td>
                   <td className="py-3"><Badge variant="success">Yes</Badge></td>
-                  <td className="py-3">Payer's Solana wallet address</td>
+                  <td className="py-3">Payer&apos;s Solana wallet address</td>
                 </tr>
                 <tr>
                   <td className="py-3"><code className="text-purple-400">x-forwarded-by</code></td>
-                  <td className="py-3"><Badge variant="secondary">No</Badge></td>
-                  <td className="py-3">Set to "x402wrap" (informational)</td>
+                  <td className="py-3"><Badge variant="info">No</Badge></td>
+                  <td className="py-3">Set to &quot;x402wrap&quot; (informational)</td>
                 </tr>
               </tbody>
             </table>
@@ -286,7 +286,7 @@ export default function DocsPage() {
             </div>
             
             <div>
-              <h3 className="text-white font-semibold mb-2">Can I update my API's price?</h3>
+              <h3 className="text-white font-semibold mb-2">Can I update my API&apos;s price?</h3>
               <p className="text-gray-400">Currently, you need to create a new link to change pricing. Dynamic pricing is coming in a future update.</p>
             </div>
             
