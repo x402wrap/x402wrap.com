@@ -38,7 +38,7 @@ export default function DocsPage() {
 
         {/* Quick Start */}
         <Card className="mb-8">
-          <h2 className="text-3xl font-bold text-white mb-4">🚀 Quick Start</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Quick Start</h2>
           <p className="text-gray-300 mb-6">
             x402wrap lets you monetize any API endpoint in seconds using the x402 protocol on Solana.
           </p>
@@ -78,7 +78,7 @@ export default function DocsPage() {
 
         {/* How It Works */}
         <Card className="mb-8">
-          <h2 className="text-3xl font-bold text-white mb-4">⚙️ How It Works</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">How It Works</h2>
           <p className="text-gray-300 mb-4">
             x402wrap acts as a payment gateway for your APIs. Here&apos;s what happens when someone calls your wrapped endpoint:
           </p>
@@ -100,7 +100,7 @@ export default function DocsPage() {
 
         {/* API Provider Guide */}
         <Card className="mb-8">
-          <h2 className="text-3xl font-bold text-white mb-4">📡 For API Providers</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">For API Providers</h2>
           
           <h3 className="text-xl font-semibold text-white mb-3 mt-6">Creating a Paid Endpoint</h3>
           <p className="text-gray-300 mb-4">
@@ -146,7 +146,7 @@ export default function DocsPage() {
 
         {/* API Consumer Guide */}
         <Card className="mb-8">
-          <h2 className="text-3xl font-bold text-white mb-4">💻 For API Consumers</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">For API Consumers</h2>
           
           <h3 className="text-xl font-semibold text-white mb-3 mt-6">Making Paid Requests</h3>
           <p className="text-gray-300 mb-4">
@@ -202,7 +202,7 @@ export default function DocsPage() {
 
         {/* Protocol Reference */}
         <Card className="mb-8">
-          <h2 className="text-3xl font-bold text-white mb-4">🔧 HTTP Headers Reference</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">HTTP Headers Reference</h2>
           
           <div className="overflow-x-auto">
             <table className="w-full text-left">
@@ -236,29 +236,25 @@ export default function DocsPage() {
 
         {/* Use Cases */}
         <Card className="mb-8">
-          <h2 className="text-3xl font-bold text-white mb-4">💡 Use Cases</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Use Cases</h2>
           
           <div className="grid md:grid-cols-2 gap-4">
             <div className="bg-white/5 rounded-lg p-4 border border-white/10">
-              <div className="text-2xl mb-2">🤖</div>
               <h3 className="text-white font-semibold mb-2">AI Agent Payments</h3>
               <p className="text-gray-400 text-sm">Autonomous AI agents can pay for APIs without credit cards</p>
             </div>
             
             <div className="bg-white/5 rounded-lg p-4 border border-white/10">
-              <div className="text-2xl mb-2">📊</div>
               <h3 className="text-white font-semibold mb-2">Data Monetization</h3>
               <p className="text-gray-400 text-sm">Sell access to your datasets on a per-query basis</p>
             </div>
             
             <div className="bg-white/5 rounded-lg p-4 border border-white/10">
-              <div className="text-2xl mb-2">🎨</div>
               <h3 className="text-white font-semibold mb-2">AI Services</h3>
               <p className="text-gray-400 text-sm">Monetize image generation, text processing, or embeddings</p>
             </div>
             
             <div className="bg-white/5 rounded-lg p-4 border border-white/10">
-              <div className="text-2xl mb-2">⛓️</div>
               <h3 className="text-white font-semibold mb-2">Web3 Oracles</h3>
               <p className="text-gray-400 text-sm">Provide paid blockchain data feeds and price oracles</p>
             </div>
@@ -267,7 +263,7 @@ export default function DocsPage() {
 
         {/* FAQ */}
         <Card className="mb-8">
-          <h2 className="text-3xl font-bold text-white mb-4">❓ FAQ</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">FAQ</h2>
           
           <div className="space-y-4">
             <div>
