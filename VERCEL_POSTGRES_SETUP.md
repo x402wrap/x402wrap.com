@@ -76,7 +76,7 @@ vercel --prod
 Teste ton site:
 1. Va sur https://x402wrap.com (ou l'URL Vercel)
 2. Crée un lien
-3. Ça devrait marcher ! 🎉
+3. Ça devrait marcher !
 
 ---
 

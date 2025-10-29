@@ -1,22 +1,22 @@
-# x402wrap 🚀
+# x402wrap
 
-> Transform any API into a paid endpoint in seconds. No code, no setup, just paste and earn.
+Transform any API into a paid endpoint in seconds. No code, no setup, just paste and earn.
 
 Built with the **x402 protocol** on **Solana** for instant micropayments.
 
 ![x402wrap Demo](https://img.shields.io/badge/status-live-brightgreen) ![Solana](https://img.shields.io/badge/Solana-mainnet-blueviolet) ![License](https://img.shields.io/badge/license-MIT-blue)
 
-## ✨ Features
+## Features
 
-- 🔗 **Instant API Monetization** - Turn any URL into a paid endpoint in 30 seconds
-- ⚡ **Lightning Fast** - Built on Solana for sub-second settlement
-- 💰 **Micropayments** - Charge as little as $0.001 per request with x402 protocol
-- 🤖 **AI-Ready** - Perfect for autonomous agents and machine-to-machine payments
-- 📊 **Real-Time Analytics** - Track requests, revenue, and performance live
-- 🔐 **No Registration** - Just paste your wallet address, no account needed
-- 💸 **Zero Fees** - Direct wallet-to-wallet payments, no middleman
+- **Instant API Monetization** - Turn any URL into a paid endpoint in 30 seconds
+- **Lightning Fast** - Built on Solana for sub-second settlement
+- **Micropayments** - Charge as little as $0.001 per request with x402 protocol
+- **AI-Ready** - Perfect for autonomous agents and machine-to-machine payments
+- **Real-Time Analytics** - Track requests, revenue, and performance live
+- **No Registration** - Just paste your wallet address, no account needed
+- **Zero Fees** - Direct wallet-to-wallet payments, no middleman
 
-## 🎯 Use Cases
+## Use Cases
 
 - **API Providers**: Monetize your APIs without complex billing systems
 - **Data Services**: Sell access to real-time data feeds
@@ -25,7 +25,7 @@ Built with the **x402 protocol** on **Solana** for instant micropayments.
 - **Developer Tools**: Transform free APIs into revenue-generating services
 - **AI Agents**: Enable autonomous payments between AI systems
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -60,7 +60,7 @@ SOLANA_RPC_URL=https://api.mainnet-beta.solana.com
 DATABASE_PATH=./x402.db
 ```
 
-## 📖 How It Works
+## How It Works
 
 ### For API Creators
 
@@ -93,7 +93,7 @@ curl -X POST https://x402wrap.com/abc123 \
   -d '{"query": "data"}'
 ```
 
-## 🏗️ Tech Stack
+## Tech Stack
 
 - **Framework**: Next.js 14 (App Router)
 - **Language**: TypeScript
@@ -103,7 +103,7 @@ curl -X POST https://x402wrap.com/abc123 \
 - **Protocol**: x402 Payment Standard
 - **Deployment**: Vercel (recommended)
 
-## 📊 API Reference
+## API Reference
 
 ### Create Link
 
@@ -162,14 +162,13 @@ Response:
 }
 ```
 
-## 🎨 Design Philosophy
+## Design Philosophy
 
 - **Minimalist** - Clean, modern UI inspired by Vercel and Linear
 - **Fast** - Optimized for speed and performance
 - **Intuitive** - Zero learning curve, works like URL shorteners
-- **Professional** - Production-ready, not a "vibe-coded" prototype
 
-## 🔒 Security
+## Security
 
 - ✅ Input validation on all endpoints
 - ✅ Solana wallet address verification
@@ -178,7 +177,7 @@ Response:
 - ✅ Rate limiting (recommended in production)
 - ✅ HTTPS only in production
 
-## 🚢 Deployment
+## Deployment
 
 ### Deploy to Vercel
 
@@ -201,7 +200,7 @@ SOLANA_RPC_URL=https://api.mainnet-beta.solana.com
 NODE_ENV=production
 ```
 
-## 📈 Roadmap
+## Roadmap
 
 - [x] Core x402 proxy functionality
 - [x] Real-time analytics dashboard
@@ -214,7 +213,7 @@ NODE_ENV=production
 - [ ] Team collaboration features
 - [ ] Revenue sharing
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
@@ -232,25 +231,21 @@ git push origin feature/AmazingFeature
 # Open a Pull Request
 ```
 
-## 📝 License
+## License
 
 MIT License - see [LICENSE](LICENSE) file for details
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **x402 Protocol** - Coinbase for the x402 payment standard
 - **Solana** - High-performance blockchain infrastructure
 - **Next.js** - Amazing React framework
 - **Vercel** - Deployment and hosting platform
 
-## 📧 Contact
+## Contact
 
 Questions? Reach out:
 - Twitter: [@x402wrap](https://twitter.com/x402wrap)
 - Discord: [Join our server](https://discord.gg/x402wrap)
 - Email: hello@x402wrap.com
-
----
-
-**Built with ❤️ for the future of micropayments**
 

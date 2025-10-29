@@ -1,4 +1,4 @@
-# 🏗️ Architecture x402wrap
+# Architecture x402wrap
 
 ## Vue d'ensemble
 
@@ -339,13 +339,13 @@ Deploy Production
 - [x] Analytics dashboard
 - [x] Responsive UI
 
-### Phase 2 🚧 (Current)
+### Phase 2 (Current)
 - [ ] Real Solana payment verification
 - [ ] Rate limiting
 - [ ] Custom domains
 - [ ] API keys
 
-### Phase 3 📋 (Future)
+### Phase 3 (Future)
 - [ ] Multi-token support
 - [ ] WebSocket proxying
 - [ ] Webhook notifications
@@ -364,8 +364,4 @@ Deploy Production
 - Dépendances npm (monthly)
 - Security patches (immediate)
 - Next.js upgrades (quarterly)
-
----
-
-**Architecture designed for scalability, security, and simplicity** 🚀
 

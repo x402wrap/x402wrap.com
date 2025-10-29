@@ -1,4 +1,4 @@
-# ⚡ Quick Start Guide
+# Quick Start Guide
 
 ## 1. Installation (1 minute)
 
@@ -16,7 +16,7 @@ npm install
 npm run dev
 ```
 
-🎉 **Le site est live sur:** http://localhost:3000
+**Le site est live sur:** http://localhost:3000
 
 ## 3. Tester le flow complet (2 minutes)
 
@@ -64,10 +64,10 @@ curl http://localhost:3000/abc123 \
 Ouvrir dans le navigateur: http://localhost:3000/stats/abc123
 
 Vous verrez :
-- ✅ Total requests
-- ✅ Total revenue
-- ✅ Stats des dernières 24h
-- ✅ Liste des requêtes récentes
+- Total requests
+- Total revenue
+- Stats des dernières 24h
+- Liste des requêtes récentes
 
 ## 4. Exemples d'APIs à monétiser
 
@@ -212,7 +212,7 @@ npm run dev
 
 ---
 
-**Ready to monetize! 🚀💰**
+**Ready to monetize!**
 
 Temps total pour setup: **< 5 minutes**
 
