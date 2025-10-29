@@ -331,9 +331,9 @@ export default function Home() {
           </div>
           <div className="flex gap-6">
             <a href="/marketplace" className="hover:text-white transition-colors">Marketplace</a>
-            <a href="#" className="hover:text-white transition-colors">Docs</a>
-            <a href="#" className="hover:text-white transition-colors">GitHub</a>
-            <a href="#" className="hover:text-white transition-colors">Discord</a>
+            <a href="/docs" className="hover:text-white transition-colors">Docs</a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
+            <a href="https://discord.gg" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Discord</a>
           </div>
         </div>
       </footer>
