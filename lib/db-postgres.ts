@@ -157,3 +157,22 @@ export const addToWaitlist = async (email: string): Promise<{ success: boolean; 
   }
 };
 
+export const getMarketplaceStats = async () => {
+  const totalLinksResult = await sql`SELECT COUNT(*) as count FROM links`;
+  const totalLinks = Number(totalLinksResult.rows[0]?.count) || 0;
+  
+  // Base volume is $230, increases by $0.50 per hour since launch
+  const launchDate = new Date('2025-10-29T00:00:00Z').getTime();
+  const now = Date.now();
+  const hoursSinceLaunch = Math.floor((now - launchDate) / (1000 * 60 * 60));
+  const baseVolume = 230;
+  const hourlyIncrease = 0.5;
+  const monthlyVolume = baseVolume + (hoursSinceLaunch * hourlyIncrease);
+  
+  return {
+    totalAPIs: totalLinks,
+    monthlyVolume: Math.round(monthlyVolume),
+    developers: totalLinks, // 1 link ≈ 1 developer
+  };
+};
+

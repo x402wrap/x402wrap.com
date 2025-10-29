@@ -51,3 +51,8 @@ export const addToWaitlist = async (email: string): Promise<{ success: boolean; 
   const db = await getDbImplementation();
   return db.addToWaitlist(email);
 };
+
+export const getMarketplaceStats = async () => {
+  const db = await getDbImplementation();
+  return db.getMarketplaceStats();
+};

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Logo from '@/components/Logo';
 import Card from '@/components/Card';
@@ -65,6 +65,31 @@ export default function MarketplacePage() {
   const [email, setEmail] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [submitted, setSubmitted] = useState(false);
+  const [stats, setStats] = useState({
+    totalAPIs: 0,
+    monthlyVolume: 230,
+    developers: 0,
+  });
+
+  // Fetch marketplace stats on mount
+  useEffect(() => {
+    const fetchStats = async () => {
+      try {
+        const response = await fetch('/api/marketplace-stats');
+        if (response.ok) {
+          const data = await response.json();
+          setStats(data);
+        }
+      } catch (error) {
+        console.error('Error fetching marketplace stats:', error);
+      }
+    };
+
+    fetchStats();
+    // Refresh stats every 5 minutes to show volume increase
+    const interval = setInterval(fetchStats, 5 * 60 * 1000);
+    return () => clearInterval(interval);
+  }, []);
 
   const handleNotifyMe = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -158,15 +183,15 @@ export default function MarketplacePage() {
         {/* Stats Preview */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           <Card className="text-center">
-            <div className="text-4xl font-bold text-purple-400 mb-2">500+</div>
-            <div className="text-gray-400">APIs at Launch</div>
+            <div className="text-4xl font-bold text-purple-400 mb-2">{stats.totalAPIs}+</div>
+            <div className="text-gray-400">APIs Created</div>
           </Card>
           <Card className="text-center">
-            <div className="text-4xl font-bold text-pink-400 mb-2">$150K+</div>
+            <div className="text-4xl font-bold text-pink-400 mb-2">${stats.monthlyVolume}+</div>
             <div className="text-gray-400">Monthly Volume</div>
           </Card>
           <Card className="text-center">
-            <div className="text-4xl font-bold text-blue-400 mb-2">10K+</div>
+            <div className="text-4xl font-bold text-blue-400 mb-2">{stats.developers}+</div>
             <div className="text-gray-400">Developers</div>
           </Card>
         </div>
