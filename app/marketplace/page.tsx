@@ -68,12 +68,29 @@ export default function MarketplacePage() {
 
   const handleNotifyMe = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Save to waitlist
-    setSubmitted(true);
-    setTimeout(() => {
-      setEmail('');
-      setSubmitted(false);
-    }, 3000);
+    if (!email) return;
+
+    try {
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitted(true);
+        setTimeout(() => {
+          setEmail('');
+          setSubmitted(false);
+        }, 3000);
+      } else {
+        alert(data.error || 'Failed to join waitlist');
+      }
+    } catch (error) {
+      alert('Something went wrong. Please try again.');
+    }
   };
 
   const filteredAPIs = selectedCategory === 'All' 
@@ -122,7 +139,7 @@ export default function MarketplacePage() {
                 required
                 disabled={submitted}
               />
-              <Button type="submit" disabled={submitted}>
+              <Button type="submit" disabled={submitted} className="whitespace-nowrap px-6">
                 {submitted ? (
                   <>
                     <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -259,7 +276,7 @@ export default function MarketplacePage() {
               required
               disabled={submitted}
             />
-            <Button type="submit" disabled={submitted}>
+            <Button type="submit" disabled={submitted} className="whitespace-nowrap px-6 min-w-[140px]">
               {submitted ? 'Saved!' : 'Join Waitlist'}
             </Button>
           </form>

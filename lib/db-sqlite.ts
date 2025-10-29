@@ -27,8 +27,15 @@ db.exec(`
     FOREIGN KEY (link_id) REFERENCES links(id)
   );
 
+  CREATE TABLE IF NOT EXISTS waitlist (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    email TEXT UNIQUE NOT NULL,
+    created_at INTEGER NOT NULL
+  );
+
   CREATE INDEX IF NOT EXISTS idx_requests_link_id ON requests(link_id);
   CREATE INDEX IF NOT EXISTS idx_requests_timestamp ON requests(timestamp);
+  CREATE INDEX IF NOT EXISTS idx_waitlist_email ON waitlist(email);
 `);
 
 export const createLink = async (
@@ -109,6 +116,22 @@ export const getLinkStats = async (linkId: string) => {
     recentRequests,
     last24h: last24hStats,
   };
+};
+
+export const addToWaitlist = async (email: string): Promise<{ success: boolean; message: string }> => {
+  try {
+    const stmt = db.prepare(`
+      INSERT INTO waitlist (email, created_at)
+      VALUES (?, ?)
+    `);
+    stmt.run(email.toLowerCase().trim(), Date.now());
+    return { success: true, message: 'Added to waitlist' };
+  } catch (error: any) {
+    if (error.code === 'SQLITE_CONSTRAINT') {
+      return { success: true, message: 'Already on waitlist' };
+    }
+    throw error;
+  }
 };
 
 export default db;

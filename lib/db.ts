@@ -46,3 +46,8 @@ export const getLinkStats = async (linkId: string) => {
   const db = await getDbImplementation();
   return db.getLinkStats(linkId);
 };
+
+export const addToWaitlist = async (email: string): Promise<{ success: boolean; message: string }> => {
+  const db = await getDbImplementation();
+  return db.addToWaitlist(email);
+};

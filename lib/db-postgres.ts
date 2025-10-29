@@ -35,6 +35,18 @@ export async function initializeDatabase() {
     await sql`
       CREATE INDEX IF NOT EXISTS idx_requests_timestamp ON requests(timestamp)
     `;
+
+    await sql`
+      CREATE TABLE IF NOT EXISTS waitlist (
+        id SERIAL PRIMARY KEY,
+        email TEXT UNIQUE NOT NULL,
+        created_at BIGINT NOT NULL
+      )
+    `;
+
+    await sql`
+      CREATE INDEX IF NOT EXISTS idx_waitlist_email ON waitlist(email)
+    `;
   } catch (error) {
     console.log('Tables already exist or error:', error);
   }
@@ -127,5 +139,21 @@ export const getLinkStats = async (linkId: string) => {
       revenue: Number(last24hStats.rows[0].revenue) || 0,
     },
   };
+};
+
+export const addToWaitlist = async (email: string): Promise<{ success: boolean; message: string }> => {
+  try {
+    const normalizedEmail = email.toLowerCase().trim();
+    await sql`
+      INSERT INTO waitlist (email, created_at)
+      VALUES (${normalizedEmail}, ${Date.now()})
+    `;
+    return { success: true, message: 'Added to waitlist' };
+  } catch (error: any) {
+    if (error.code === '23505') { // PostgreSQL unique constraint violation
+      return { success: true, message: 'Already on waitlist' };
+    }
+    throw error;
+  }
 };
 
