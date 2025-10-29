@@ -75,7 +75,7 @@ export default function MarketplacePage() {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const response = await fetch('/api/marketplace-stats');
+        const response = await fetch('/api/marketplace-stats', { cache: 'no-store' });
         if (response.ok) {
           const data = await response.json();
           setStats(data);
@@ -86,9 +86,30 @@ export default function MarketplacePage() {
     };
 
     fetchStats();
-    // Refresh stats every 5 minutes to show volume increase
-    const interval = setInterval(fetchStats, 5 * 60 * 1000);
-    return () => clearInterval(interval);
+    
+    // Refresh when page becomes visible (tab focus)
+    const handleVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        fetchStats();
+      }
+    };
+    
+    // Refresh when window gets focus
+    const handleFocus = () => {
+      fetchStats();
+    };
+
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    window.addEventListener('focus', handleFocus);
+    
+    // Refresh stats every minute to show volume increase
+    const interval = setInterval(fetchStats, 60 * 1000);
+    
+    return () => {
+      clearInterval(interval);
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      window.removeEventListener('focus', handleFocus);
+    };
   }, []);
 
   const handleNotifyMe = async (e: React.FormEvent) => {
