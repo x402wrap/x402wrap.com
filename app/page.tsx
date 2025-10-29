@@ -333,7 +333,7 @@ export default function Home() {
             <a href="/marketplace" className="hover:text-white transition-colors">Marketplace</a>
             <a href="/docs" className="hover:text-white transition-colors">Docs</a>
             <a href="https://github.com/x402wrap/x402wrap.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">GitHub</a>
-            <a href="https://discord.gg" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Discord</a>
+            <a href="https://x.com/x402wrap" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">X (Twitter)</a>
           </div>
         </div>
       </footer>
