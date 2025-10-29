@@ -3,16 +3,6 @@
   "buildCommand": "npm run build",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
-  "regions": ["iad1"],
-  "env": {
-    "NEXT_PUBLIC_BASE_URL": {
-      "description": "Base URL for generated links (e.g., https://x402wrap.com)",
-      "value": ""
-    },
-    "SOLANA_RPC_URL": {
-      "description": "Solana RPC endpoint (optional, defaults to public mainnet)",
-      "value": "https://api.mainnet-beta.solana.com"
-    }
-  }
+  "regions": ["iad1"]
 }
 
