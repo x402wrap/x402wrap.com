@@ -172,33 +172,6 @@ export default function MarketplacePage() {
           <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
             Discover and monetize APIs instantly. Browse thousands of ready-to-use paid endpoints powered by x402.
           </p>
-          
-          {/* Notify Me Form */}
-          <Card className="max-w-md mx-auto">
-            <h3 className="text-lg font-semibold mb-4 text-white">Get notified at launch</h3>
-            <form onSubmit={handleNotifyMe} className="flex gap-2">
-              <Input
-                type="email"
-                placeholder="your@email.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                disabled={submitted}
-              />
-              <Button type="submit" disabled={submitted} className="whitespace-nowrap px-6">
-                {submitted ? (
-                  <>
-                    <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                    Saved!
-                  </>
-                ) : (
-                  'Notify Me'
-                )}
-              </Button>
-            </form>
-          </Card>
         </div>
 
         {/* Stats Preview */}
