@@ -1,0 +1,36 @@
+<svg width="300" height="80" viewBox="0 0 300 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="iconGradientH" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8B5CF6;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#EC4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6366F1;stop-opacity:1" />
+    </linearGradient>
+    
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#C084FC;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#F0ABFC;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#818CF8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Icon -->
+  <g transform="translate(40, 40)">
+    <!-- Shield -->
+    <path d="M 0,-28 L 20,-21 L 20,0 C 20,14 10,23.5 0,28 C -10,23.5 -20,14 -20,0 L -20,-21 Z" 
+          fill="url(#iconGradientH)"/>
+    
+    <!-- Lock -->
+    <circle cx="0" cy="-2" r="4" fill="white" opacity="0.3"/>
+    <rect x="-6" y="-2" width="12" height="10" rx="2" fill="white" opacity="0.3"/>
+    <circle cx="0" cy="3" r="2" fill="white"/>
+    <rect x="-0.8" y="3" width="1.6" height="4" rx="0.8" fill="white"/>
+  </g>
+  
+  <!-- Text: x402 -->
+  <text x="90" y="55" 
+        font-family="system-ui, -apple-system, sans-serif" 
+        font-size="36" 
+        font-weight="700" 
+        fill="url(#textGradient)">x402<tspan font-weight="500" opacity="0.9">wrap</tspan></text>
+</svg>
+

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>x402wrap - Logo Assets</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1e1b4b 0%, #1f2937 100%);
+      color: white;
+      padding: 3rem;
+      min-height: 100vh;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #C084FC, #F0ABFC, #818CF8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .subtitle {
+      color: #9CA3AF;
+      margin-bottom: 3rem;
+      font-size: 1.25rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      padding: 2rem;
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-4px);
+    }
+    .card h3 {
+      margin-bottom: 1rem;
+      color: #C084FC;
+      font-size: 1.25rem;
+    }
+    .card p {
+      color: #9CA3AF;
+      font-size: 0.875rem;
+      margin-bottom: 1.5rem;
+    }
+    .preview {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 0.5rem;
+      padding: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 200px;
+      margin-bottom: 1rem;
+    }
+    .preview.white {
+      background: white;
+    }
+    .preview img {
+      max-width: 100%;
+      height: auto;
+    }
+    .download {
+      display: inline-block;
+      background: linear-gradient(135deg, #8B5CF6, #EC4899);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+    .download:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(139, 92, 246, 0.3);
+    }
+    .specs {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 0.5rem;
+      font-size: 0.875rem;
+      color: #9CA3AF;
+    }
+    .color-palette {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .color-box {
+      aspect-ratio: 1;
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      padding: 1rem;
+      font-size: 0.875rem;
+      font-weight: 600;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    }
+    .section {
+      margin-top: 4rem;
+    }
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>x402wrap Logo Assets</h1>
+    <p class="subtitle">Design system & brand identity</p>
+
+    <!-- Main Logos -->
+    <div class="grid">
+      <!-- Logo principal -->
+      <div class="card">
+        <h3>Logo Principal</h3>
+        <p>Logo complet avec texte - Format carré</p>
+        <div class="preview">
+          <img src="/logo/logo.svg" alt="Logo principal" style="width: 200px;">
+        </div>
+        <a href="/logo/logo.svg" download class="download">⬇ Télécharger SVG</a>
+        <div class="specs">
+          <strong>Dimensions:</strong> 200x200px<br>
+          <strong>Format:</strong> SVG vectoriel<br>
+          <strong>Usage:</strong> Web, social media
+        </div>
+      </div>
+
+      <!-- Logo icône -->
+      <div class="card">
+        <h3>Icône seule</h3>
+        <p>Bouclier + cadenas - Sans texte</p>
+        <div class="preview">
+          <img src="/logo/logo-icon.svg" alt="Logo icône" style="width: 120px;">
+        </div>
+        <a href="/logo/logo-icon.svg" download class="download">⬇ Télécharger SVG</a>
+        <div class="specs">
+          <strong>Dimensions:</strong> 120x120px<br>
+          <strong>Format:</strong> SVG vectoriel<br>
+          <strong>Usage:</strong> Avatar, app icon
+        </div>
+      </div>
+
+      <!-- Logo horizontal -->
+      <div class="card">
+        <h3>Version Horizontale</h3>
+        <p>Logo + texte - Format paysage</p>
+        <div class="preview">
+          <img src="/logo/logo-horizontal.svg" alt="Logo horizontal" style="width: 250px;">
+        </div>
+        <a href="/logo/logo-horizontal.svg" download class="download">⬇ Télécharger SVG</a>
+        <div class="specs">
+          <strong>Dimensions:</strong> 300x80px<br>
+          <strong>Format:</strong> SVG vectoriel<br>
+          <strong>Usage:</strong> Headers, signatures
+        </div>
+      </div>
+
+      <!-- Logo monochrome -->
+      <div class="card">
+        <h3>Version Monochrome</h3>
+        <p>Noir et blanc - Print friendly</p>
+        <div class="preview white">
+          <img src="/logo/logo-monochrome.svg" alt="Logo monochrome" style="width: 200px;">
+        </div>
+        <a href="/logo/logo-monochrome.svg" download class="download">⬇ Télécharger SVG</a>
+        <div class="specs">
+          <strong>Dimensions:</strong> 200x200px<br>
+          <strong>Format:</strong> SVG vectoriel<br>
+          <strong>Usage:</strong> Print, merch
+        </div>
+      </div>
+
+      <!-- Favicon -->
+      <div class="card">
+        <h3>Favicon</h3>
+        <p>Icône navigateur - Ultra compact</p>
+        <div class="preview">
+          <img src="/favicon.svg" alt="Favicon" style="width: 64px; image-rendering: crisp-edges;">
+        </div>
+        <a href="/favicon.svg" download class="download">⬇ Télécharger SVG</a>
+        <div class="specs">
+          <strong>Dimensions:</strong> 32x32px<br>
+          <strong>Format:</strong> SVG vectoriel<br>
+          <strong>Usage:</strong> Browser tab icon
+        </div>
+      </div>
+    </div>
+
+    <!-- Color Palette -->
+    <div class="section">
+      <h2>🎨 Palette de couleurs</h2>
+      <div class="color-palette">
+        <div class="color-box" style="background: #8B5CF6;">#8B5CF6<br>Purple</div>
+        <div class="color-box" style="background: #EC4899;">#EC4899<br>Pink</div>
+        <div class="color-box" style="background: #6366F1;">#6366F1<br>Indigo</div>
+        <div class="color-box" style="background: #C084FC;">#C084FC<br>Light Purple</div>
+        <div class="color-box" style="background: #F0ABFC;">#F0ABFC<br>Light Pink</div>
+        <div class="color-box" style="background: #818CF8;">#818CF8<br>Light Indigo</div>
+      </div>
+    </div>
+
+    <!-- Usage Guidelines -->
+    <div class="section">
+      <h2>📐 Guide d'utilisation</h2>
+      <div class="card">
+        <h3>✅ À faire</h3>
+        <ul style="color: #9CA3AF; line-height: 1.8; margin-left: 1.5rem;">
+          <li>Utiliser sur fond sombre ou blanc</li>
+          <li>Maintenir les proportions originales</li>
+          <li>Laisser de l'espace autour (padding)</li>
+          <li>Utiliser la version monochrome si besoin</li>
+          <li>Exporter en PNG avec fond transparent si nécessaire</li>
+        </ul>
+        <br>
+        <h3 style="color: #EF4444;">❌ À ne pas faire</h3>
+        <ul style="color: #9CA3AF; line-height: 1.8; margin-left: 1.5rem;">
+          <li>Changer les couleurs du gradient</li>
+          <li>Déformer ou étirer le logo</li>
+          <li>Ajouter des ombres portées</li>
+          <li>Utiliser sur fond trop coloré</li>
+          <li>Redessiner ou modifier les formes</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Symbolism -->
+    <div class="section">
+      <h2>🛡️ Symbolisme</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Bouclier (Shield)</h3>
+          <p>
+            Représente la <strong>protection</strong> et la <strong>sécurité</strong>.
+            "Wrap" signifie envelopper l'API dans une couche de protection payante.
+            La forme défensive inspire confiance aux utilisateurs.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Cadenas (Lock)</h3>
+          <p>
+            Symbolise le <strong>paiement requis</strong> (402 Payment Required).
+            Représente le contrôle d'accès et la <strong>monétisation</strong>.
+            Garantit la sécurité des transactions.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Gradient Violet/Rose</h3>
+          <p>
+            <strong>Violet:</strong> Innovation, technologie<br>
+            <strong>Rose:</strong> Créativité, accessibilité<br>
+            <strong>Indigo:</strong> Fiabilité, professionnalisme
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; color: #6B7280;">
+      <p>x402wrap - Monetize Any API Instantly</p>
+      <p style="margin-top: 0.5rem; font-size: 0.875rem;">Built with ❤️ for the future of micropayments</p>
+    </div>
+  </div>
+</body>
+</html>
+
