@@ -42,7 +42,7 @@ async function handleRequest(request: NextRequest, params: { id: string }) {
     const { id } = params;
 
     // Get link from database
-    const link = getLink(id);
+    const link = await getLink(id);
 
     if (!link) {
       return NextResponse.json(
@@ -107,7 +107,7 @@ async function handleRequest(request: NextRequest, params: { id: string }) {
     }
 
     // Log the request
-    logRequest(
+    await logRequest(
       link.id,
       paymentVerification.payer || null,
       link.price,

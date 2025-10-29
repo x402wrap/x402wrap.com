@@ -1,11 +1,21 @@
-import Database from 'better-sqlite3';
-import path from 'path';
+// Use Postgres in production, SQLite in development
+const isProduction = process.env.NODE_ENV === 'production';
 
-const dbPath = path.join(process.cwd(), 'x402.db');
-const db = new Database(dbPath);
+let dbModule: any;
 
-// Initialize database schema
-db.exec(`
+if (isProduction) {
+  // @ts-ignore
+  dbModule = require('./db-postgres');
+} else {
+  // Keep SQLite for local dev
+  const Database = require('better-sqlite3');
+  const path = require('path');
+  const dbPath = path.join(process.cwd(), 'x402.db');
+  const db = new Database(dbPath);
+
+// Initialize database schema (only for SQLite in dev)
+if (!isProduction) {
+  db.exec(`
   CREATE TABLE IF NOT EXISTS links (
     id TEXT PRIMARY KEY,
     original_url TEXT NOT NULL,
@@ -29,6 +39,7 @@ db.exec(`
   CREATE INDEX IF NOT EXISTS idx_requests_link_id ON requests(link_id);
   CREATE INDEX IF NOT EXISTS idx_requests_timestamp ON requests(timestamp);
 `);
+}
 
 export interface Link {
   id: string;
@@ -49,7 +60,11 @@ export interface RequestLog {
   success: number;
 }
 
-export const createLink = (id: string, originalUrl: string, price: number, receiverWallet: string): Link => {
+export const createLink = async (id: string, originalUrl: string, price: number, receiverWallet: string): Promise<Link> => {
+  if (isProduction) {
+    return dbModule.createLink(id, originalUrl, price, receiverWallet);
+  }
+  
   const stmt = db.prepare(`
     INSERT INTO links (id, original_url, price, receiver_wallet, created_at)
     VALUES (?, ?, ?, ?, ?)
@@ -69,12 +84,20 @@ export const createLink = (id: string, originalUrl: string, price: number, recei
   };
 };
 
-export const getLink = (id: string): Link | undefined => {
+export const getLink = async (id: string): Promise<Link | undefined> => {
+  if (isProduction) {
+    return dbModule.getLink(id);
+  }
+  
   const stmt = db.prepare('SELECT * FROM links WHERE id = ?');
   return stmt.get(id) as Link | undefined;
 };
 
-export const logRequest = (linkId: string, payerWallet: string | null, amount: number, success: boolean = true) => {
+export const logRequest = async (linkId: string, payerWallet: string | null, amount: number, success: boolean = true) => {
+  if (isProduction) {
+    return dbModule.logRequest(linkId, payerWallet, amount, success);
+  }
+  
   const stmt = db.prepare(`
     INSERT INTO requests (link_id, timestamp, payer_wallet, amount, success)
     VALUES (?, ?, ?, ?, ?)
@@ -93,8 +116,12 @@ export const logRequest = (linkId: string, payerWallet: string | null, amount: n
   updateStmt.run(amount, linkId);
 };
 
-export const getLinkStats = (linkId: string) => {
-  const link = getLink(linkId);
+export const getLinkStats = async (linkId: string) => {
+  if (isProduction) {
+    return dbModule.getLinkStats(linkId);
+  }
+  
+  const link = await getLink(linkId);
   if (!link) return null;
   
   const recentRequests = db.prepare(`
@@ -120,5 +147,5 @@ export const getLinkStats = (linkId: string) => {
   };
 };
 
-export default db;
+export default isProduction ? null : db;
 

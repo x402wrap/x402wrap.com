@@ -8,7 +8,7 @@ export async function GET(
   try {
     const { id } = params;
 
-    const stats = getLinkStats(id);
+    const stats = await getLinkStats(id);
 
     if (!stats) {
       return NextResponse.json(

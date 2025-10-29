@@ -41,7 +41,7 @@ export async function POST(request: NextRequest) {
     const id = generateLinkId();
 
     // Create link in database
-    const link = createLink(id, apiUrl, price, wallet);
+    const link = await createLink(id, apiUrl, price, wallet);
 
     return NextResponse.json({
       id: link.id,
